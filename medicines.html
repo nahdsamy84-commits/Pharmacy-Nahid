@@ -1,0 +1,435 @@
+
+
+      [05/11/2026 07:28 م] Nahid sami: <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الأدوية | صيدلية عافية</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f8f4;
+    color: #222;
+    transition: 0.3s;
+}
+
+header {
+    background: #198754;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+nav {
+    background: #12643f;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+h2 {
+    color: #198754;
+    text-align: center;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.buttons {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #12643f;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 13px;
+    text-align: center;
+}
+
+th {
+    background: #198754;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #e7f3eb;
+}
+
+#message {
+    text-align: center;
+    font-weight: bold;
+    color: #198754;
+    margin-top: 15px;
+}
+
+footer {
+    background: #12643f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* الوضع الليلي */
+
+body.dark {
+    background: #181818;
+    color: white;
+}
+
+body.dark header {
+    background: #222;
+}
+
+body.dark nav,
+body.dark footer {
+    background: #111;
+}
+
+body.dark .box {
+    background: #292929;
+    color: white;
+}
+
+body.dark h2 {
+    color: #69d69b;
+}
+
+body.dark input {
+    background: #383838;
+    color: white;
+    border-color: #777;
+}
+
+body.dark table {
+    background: #292929;
+    color: white;
+}
+
+body.dark td {
+    border-color: #555;
+}
+
+body.dark tr:nth-child(even) {
+    background: #383838;
+}
+
+@media (max-width: 600px) {
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .box {
+        padding: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>صيدلية عافية</h1>
+    <p>صحتكم تهمنا</p>
+</header>
+
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="medicines.html">الأدوية</a>
+    <a href="services.html">الخدمات</a>
+    <a href="contact.html">تواصل معنا</a>
+</nav>
+
+<div class="container">
+
+<div class="box">
+
+<h2>قائمة الأدوية</h2>
+
+<p style="text-align:center;">
+مرحباً بكم في صفحة الأدوية بصيدلية عافية.
+يمكنكم البحث عن الأدوية ومعرفة استخداماتها وأسعارها.
+</p>
+
+<div class="buttons">
+    <button type="button" id="modeButton">
+        🌙 الوضع الليلي
+    </button>
+</div>
+
+<h2>البحث عن دواء</h2>
+
+<input
+    type="text"
+    id="searchInput"
+    placeholder="اكتبي اسم الدواء هنا..."
+>
+
+<div class="buttons">
+
+    <button type="button" id="searchButton">
+        🔍 بحث
+    </button>
+
+    <button type="button" id="allButton">
+        عرض كل الأدوية
+    </button>
+
+</div>
+
+<div style="overflow-x:auto;">
+
+<table>
+
+<thead>
+<tr>
+    <th>الرقم</th>
+    <th>اسم الدواء</th>
+    <th>الاستخدام</th>
+    <th>السعر</th>
+</tr>
+</thead>
+
+<tbody id="medicineList">
+
+<tr>
+    <td>1</td>
+    <td>Panadol</td>
+    <td>تخفيف الألم والحمى</td>
+    <td>2000</td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>Vitamin C</td>
+    <td>مكمل غذائي</td>
+    <td>3000</td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>Ibuprofen</td>
+    <td>تخفيف الألم والالتهاب</td>
+    <td>2500</td>
+</tr>
+[05/11/2026 07:28 م] Nahid sami: <tr>
+    <td>4</td>
+    <td>Paracetamol</td>
+    <td>تخفيف الألم والحمى</td>
+    <td>1500</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>Calcium</td>
+    <td>مكمل للكالسيوم</td>
+    <td>4000</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+</div>
+
+<footer>
+    <p>جميع الحقوق محفوظة © صيدلية عافية 2026</p>
+</footer>
+
+<script>
+
+// الوضع الليلي والنهاري
+
+var modeButton = document.getElementById("modeButton");
+
+modeButton.onclick = function() {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        modeButton.innerHTML = "☀️ الوضع النهاري";
+
+    } else {
+
+        modeButton.innerHTML = "🌙 الوضع الليلي";
+
+    }
+
+};
+
+
+// البحث عن الأدوية
+
+var searchInput = document.getElementById("searchInput");
+
+var searchButton = document.getElementById("searchButton");
+
+var allButton = document.getElementById("allButton");
+
+var medicineList = document.getElementById("medicineList");
+
+var message = document.getElementById("message");
+
+
+searchButton.onclick = function() {
+
+    var value = searchInput.value.trim().toLowerCase();
+
+    var rows = medicineList.getElementsByTagName("tr");
+
+    var count = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+
+        var name = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+
+        if (name.includes(value) && value !== "") {
+
+            rows[i].style.display = "";
+
+            count++;
+
+        } else {
+
+            rows[i].style.display = "none";
+
+        }
+
+    }
+
+    if (value === "") {
+
+        message.textContent = "اكتبي اسم الدواء أولاً.";
+
+    } else if (count === 0) {
+
+        message.textContent = "الدواء غير موجود.";
+
+    } else {
+
+        message.textContent = "تم العثور على " + count + " دواء.";
+
+    }
+
+};
+
+
+// عرض كل الأدوية
+
+allButton.onclick = function() {
+
+    var rows = medicineList.getElementsByTagName("tr");
+
+    for (var i = 0; i < rows.length; i++) {
+
+        rows[i].style.display = "";
+
+    }
+
+    searchInput.value = "";
+
+    message.textContent = "تم عرض جميع الأدوية.";
+
+};
+
+
+// البحث عند الضغط على Enter
+
+searchInput.onkeydown = function(event) {
+
+    if (event.key === "Enter") {
+
+        searchButton.click();
+
+    }
+
+};
+
+</script>
+
+</body>
+</html>
