@@ -1,0 +1,219 @@
+[05/11/2026 08:25 م] Nahid sami: <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخدمات - صيدلية عافية</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f1f8f5;
+    color: #222;
+    transition: 0.3s;
+}
+
+header {
+    background: #087f5b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+nav {
+    background: #066747;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #b8f5d8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.mode-btn {
+    background: #087f5b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+.card h3 {
+    color: #087f5b;
+}
+
+.card button {
+    background: #087f5b;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover,
+.mode-btn:hover {
+    background: #055c41;
+}
+
+.details {
+    display: none;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+
+body.dark {
+    background: #202b27;
+    color: white;
+}
+
+body.dark .card {
+    background: #35433d;
+    color: white;
+}
+
+body.dark .card h3 {
+    color: #80e0b5;
+}
+
+footer {
+    background: #066747;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>صيدلية عافية</h1>
+    <p>خدماتنا الصحية من أجلكم</p>
+</header>
+
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="medicine.html">الأدوية</a>
+    <a href="service.html">الخدمات</a>
+    <a href="contact.html">تواصل معنا</a>
+</nav>
+
+<div class="container">
+
+    <h2>خدماتنا</h2>
+
+    <button class="mode-btn" id="modeButton" type="button">
+        الوضع الليلي
+    </button>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>صرف الأدوية</h3>
+            <p>توفير الأدوية والمستلزمات الطبية.</p>
+            <button type="button" onclick="showDetails(0)">عرض التفاصيل</button>
+            <p class="details">نوفر مجموعة متنوعة من الأدوية وفق الوصفات الطبية وإرشادات الصيدلي.</p>
+        </div>
+
+        <div class="card">
+            <h3>الاستشارات الدوائية</h3>
+            <p>مساعدة العملاء في استخدام الأدوية.</p>
+            <button type="button" onclick="showDetails(1)">عرض التفاصيل</button>
+            <p class="details">نقدم إرشادات حول طريقة استخدام الدواء والجرعات والتنبيهات المهمة.</p>
+        </div>
+
+        <div class="card">
+            <h3>قياس ضغط الدم</h3>
+            <p>متابعة وقياس ضغط الدم.</p>
+            <button type="button" onclick="showDetails(2)">عرض التفاصيل</button>
+            <p class="details">خدمة قياس ضغط الدم للمساعدة في متابعة الحالة الصحية.</p>
+        </div>
+
+        <div class="card">
+            <h3>قياس نسبة السكر</h3>
+            <p>فحص مستوى السكر في الدم.</p>
+            <button type="button" onclick="showDetails(3)">عرض التفاصيل</button>
+            <p class="details">نوفر خدمة قياس مستوى السكر باستخدام جهاز الفحص المخصص.</p>
+        </div>
+
+        <div class="card">
+            <h3>النصائح الصحية</h3>
+            <p>تقديم نصائح للمحافظة على الصحة.</p>
+            <button type="button" onclick="showDetails(4)">عرض التفاصيل</button>
+            <p class="details">نساعدكم بمعلومات وإرشادات عامة حول الصحة والوقاية.</p>
+        </div>
+
+        <div class="card">
+            <h3>مستلزمات طبية</h3>
+            <p>توفير الأدوات والمستلزمات الطبية.</p>
+            <button type="button" onclick="showDetails(5)">عرض التفاصيل</button>
+            <p class="details">نوفر مستلزمات طبية متنوعة للاستخدام المنزلي والشخصي.</p>
+        </div>
+
+    </div>
+</div>
+[05/11/2026 08:25 م] Nahid sami: <footer>
+    <p>جميع الحقوق محفوظة © صيدلية عافية 2026</p>
+</footer>
+
+<script>
+document.getElementById("modeButton").addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        this.textContent = "الوضع النهاري";
+    } else {
+        this.textContent = "الوضع الليلي";
+    }
+});
+
+function showDetails(index) {
+    let details = document.querySelectorAll(".details");
+    let item = details[index];
+
+    if (item.style.display === "block") {
+        item.style.display = "none";
+    } else {
+        item.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
