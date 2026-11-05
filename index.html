@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>صيدلية عافية | الصفحة الرئيسية</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>صيدلية عافية</h1>
+        <p>صحتكم تهمنا ورعايتكم مسؤوليتنا</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="medicines.html">الأدوية</a>
+        <a href="services.html">الخدمات</a>
+        <a href="contact.html">تواصل معنا</a>
+    </nav>
+
+    <!-- Dark Mode Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="modeButton" type="button">
+            🌙 الوضع الليلي
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Welcome Section -->
+        <section>
+            <h2>مرحباً بكم في صيدلية عافية</h2>
+
+            <p>
+                أهلاً وسهلاً بكم في صيدلية عافية.
+                نحن نسعى لتوفير الأدوية والمستلزمات الطبية
+                وتقديم أفضل الخدمات الصحية لعملائنا.
+            </p>
+
+            <p>
+                هدفنا هو الاهتمام بصحتكم وتوفير احتياجاتكم
+                الصحية بكل سهولة واهتمام.
+            </p>
+        </section>
+
+        <!-- About Us Section -->
+        <section>
+            <h2>من نحن</h2>
+
+            <p>
+                صيدلية عافية هي صيدلية تهدف إلى توفير الأدوية
+                والمستلزمات الطبية وتقديم المعلومات والإرشادات
+                الصحية للعملاء.
+            </p>
+
+            <p>
+                نحرص على تقديم خدمة مميزة ومساعدة العملاء
+                في الحصول على احتياجاتهم الصحية.
+            </p>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section>
+            <h2>لماذا تختار صيدلية عافية؟</h2>
+
+            <p>✔ توفير مجموعة متنوعة من الأدوية.</p>
+
+            <p>✔ الاهتمام براحة العملاء.</p>
+
+            <p>✔ تقديم الخدمات الصحية والإرشادات الدوائية.</p>
+
+            <p>✔ سهولة التواصل والاستفسار.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section>
+            <h2>خدماتنا</h2>
+
+            <p>توفير الأدوية والمستلزمات الطبية.</p>
+
+            <p>تقديم المعلومات عن الأدوية.</p>
+
+            <p>المساعدة في معرفة توفر المنتجات.</p>
+
+            <p>تقديم خدمات التواصل والاستفسار.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 صيدلية عافية</p>
+    </footer>
+
+    <!-- Dark Mode JavaScript -->
+    <script>
+
+        const modeButton = document.getElementById("modeButton");
+
+        // Load saved mode
+        if (localStorage.getItem("theme") === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            modeButton.textContent = "☀️ الوضع النهاري";
+
+        }
+
+        // Change mode
+        modeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                localStorage.setItem("theme", "dark");
+
+                modeButton.textContent = "☀️ الوضع النهاري";
+
+            } else {
+
+                localStorage.setItem("theme", "light");
+
+                modeButton.textContent = "🌙 الوضع الليلي";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+  
